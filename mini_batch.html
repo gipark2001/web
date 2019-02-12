@@ -1,0 +1,52 @@
+<br><!doctype html>
+<html>
+<head>
+  <title>Mini Batch</title>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <h1><a href="index.html">Machine Learning</a></h1>
+  <ol>
+    <li><a href="logistic_regression.html">Logistic Regression</a></li>
+    <li><a href="mini_batch.html">Mini Batch</a></li>
+    <li><a href="optimization.html">Binary Classification</a></li>
+  </ol>
+  <h2>Mini Batch</h2>
+  <p>
+    보통 vectorization방법으로 gradient descent알고리즘의 효율을 높이게 된다.<br>
+    하지만 input 데이터가 너무 크다면 그 방법을 사용할 수 없다.<br>
+    메모리 문제도 발생하고 한 번 interation (epoch)당 시간이 너무 오래 걸리기 때문이다.<br>
+    Batch-gradient descent와 mini-bach gradient descent의 cost 그래프의 차이는 아래와 같다.<br>
+    <h3>Choosing your mini-batch</h3>
+    size Mini-batch 크기가 전체 트레이닝 셋 데이터 사이즈인 m과 같다면 이것은 Batch gradient descent방법이다.<br>
+    <ul>
+      <li>(+) 상대적으로 아래의 contour그래프를 보면 알 수 있듯이 적은 noise와 Large step으로 글로벌 미니멈에 수렴한다.</li>
+      <li>(+) vectorization 효율이 좋다.</li>
+      <li>(-) interation당 속도가 느리다.</li>
+      <li>(-) 메모리 여유 공간에 따라서 실행 불가능 할 수도 있다.</li>
+    </ul>
+    <h3>Mini-batch 크기가 1이라면,Stochastic gradient descent라고 부른다.</h3>
+    <ul>
+      <li>(+) 적은 메모리로 동작 가능하다. noise한 부분은 learning rate을 작게하면 완화 할 수 있다.</li>
+      <li>(-) vectorization 효율이 없다. training data를 1개만 사용하기 때문이다.</li>
+    </ul>
+    <h3>Mini-batch크기를 너무 작게도 크게도 하지 않는다.</h3>
+    <ul>
+      <li>(+) vectorization을 효과 본다.</li>
+      <li>(+) interation당 긴 시간없이 progress를 만들 수 있다.</li>
+    </ul>
+    <h3>최종적 가이드라인</h3>
+    <ul>
+      <li>데이터가 별로 없다면 batch gradient descent를 쓴다. : (ex 2,000 정도)</li>
+      <li>mini-batch를 선택 (64, 128, 256, 512 사이즈로 선택한다. 메모리 사이즈에 맞춰서)</li>
+      <li>CPU/GPU memory 사이즈에 맞춰서 조절 한다.</li>
+    </ul>  
+    Take-away message
+    SGD와 GD가 같은 글로벌 cost 최소점에 도달 할 수 있다는 것은 증명이 되어 있지만, neural netwrok은 convex가 아니기 때문에 batch 크기의 설정 방법에 따라 수렴하는 조건이 다를 수 있다.<br>
+    Batch size는 일반적으로 메모리가 감당할 수 있는 정도까지 최대한 크게 잡는게 좋을것 같다.
+    참고자료
+    Coursera DeepLearning ai, Andrew Ng
+  </p>
+</body>
+</html>

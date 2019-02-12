@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <title>Logistic Regression</title>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <h1><a href="index.html">Machine Learning</a></h1>
+  <ol>
+    <li><a href="logistic_regression.html">Logistic Regression</a></li>
+    <li><a href="mini_batch.html">Mini Batch</a></li>
+    <li><a href="optimization.html">Binary Classification</a></li>
+  </ol>
+  <h2>Logistic Regression</h2>
+  <p>
+    로지스틱(Logistic) 회귀분석은 그 명칭과 달리 회귀분석 문제와 분류문제 모두에 사용할 수 있다.<br>
+    로지스틱 회귀분석 모형에서는 종속 변수가 이항 분포를 따르고 그 모수  μ 가 독립 변수  x 에 의존한다고 가정한다.<br>
+<br>
+    p(y∣x)=Bin(y∣μ(x),N)<br>
+<br>
+    위 식에서 보듯이 로지스틱 함수는  y 의 값이 특정한 구간내의 값( 0∼N )만 가질 수 있기 때문에 종속변수가 이러한 특성을 가진 경우에 회귀분석 방법으로 쓸 수 있다.<br>
+    또는 이항 분포의 특별한 경우( N=1 )로  y 가 베르누이 확률분포인 경우도 있을 수 있다. 여기에서는 베르누이 확률분포를 따르는 로지스틱 회귀분석만 고려하기로 한다.<br>
+<br>
+    p(y∣x)=Bern(y∣μ(x))<br>
+<br>
+    종속변수  y 가 0또는 1인 분류 예측 문제를 풀 때는  x  값에 따라  μ(x) 를 예측한 후 다음 기준에 따라 y를 예측한다.<br>
+<br>
+    y^= 1 if μ(x)≥0.5<br>
+    y^= 0 if μ(x)<0.5<br>
+<br>
+    또는  y^ 로  y=1 이 될 확률값  μ(x) 를 직접 출력할 수도 있다.<br>
+<br>
+    y^=μ(x)<br>
+  </p>
+</body>
+</html>
